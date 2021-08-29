@@ -8,12 +8,15 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using static QRCoder.PayloadGenerator;
+using static QRCoder.PayloadGenerator.ContactData;
+using static QRCoder.PayloadGenerator.Girocode;
 
 namespace QR_API.Controllers
 {
     public class HomeController : BaseController
     {
-        [HttpPost]
+        [HttpPost("text")]
         public IActionResult CreateText(TextDto textInput)
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
@@ -26,6 +29,106 @@ namespace QR_API.Controllers
             return File(file, textInput.Output);
         }
 
+        [HttpPost("bitcoin")]
+        public IActionResult CreateBitCoin(BitCoinDto bitCoinDto)
+        {
+            BitcoinAddress generator = new BitcoinAddress(bitCoinDto.address,bitCoinDto.amount,bitCoinDto.lable,bitCoinDto.Message);
+            string payload = generator.ToString();
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            var qrCodeAsBitmap = qrCode.GetGraphic(bitCoinDto.Size);
+            var file = ImageToBytes.ImageToByteArray(qrCodeAsBitmap);
+            return File(file, bitCoinDto.Output);
+        }
 
+        [HttpPost("bookmark")]
+        public IActionResult CreateBookMark(BookmarkDto bookmarkDto)
+        {
+            Bookmark generator = new Bookmark(bookmarkDto.Url, bookmarkDto.Title);
+            string payload = generator.ToString();
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            var qrCodeAsBitmap = qrCode.GetGraphic(bookmarkDto.Size);
+
+            var file = ImageToBytes.ImageToByteArray(qrCodeAsBitmap);
+            return File(file, bookmarkDto.Output);
+        }
+
+        [HttpPost("calendar")]
+        public IActionResult CreateCalendar(CalendarEventDto calendarEventDto)
+        {
+            CalendarEvent generator = new CalendarEvent(calendarEventDto.Subject, calendarEventDto.Description, calendarEventDto.Location, calendarEventDto.Start, calendarEventDto.End, calendarEventDto.AllDayEvent);
+            string payload = generator.ToString();
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            var qrCodeAsBitmap = qrCode.GetGraphic(calendarEventDto.Size);
+
+            var file = ImageToBytes.ImageToByteArray(qrCodeAsBitmap);
+            return File(file, calendarEventDto.Output);
+        }
+
+        [HttpPost("contact")]
+        public IActionResult CreateContact(ContactDto contactDto)
+        {
+            ContactData generator = new ContactData(ContactData.ContactOutputType.VCard3, contactDto.FirstName, contactDto.LastName, contactDto.NickName, contactDto.Phone, contactDto.MobilePhone, contactDto.WorkPhone, contactDto.Email, contactDto.BirthDate, contactDto.WebSite, contactDto.street, contactDto.HouseNumber, contactDto.City, contactDto.ZipCode, contactDto.Country, contactDto.Note, contactDto.street,(contactDto.AddressOrder.ToLower() !="reversed")? AddressOrder.Default: AddressOrder.Reversed);
+            string payload = generator.ToString();
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            var qrCodeAsBitmap = qrCode.GetGraphic(contactDto.Size);
+
+            var file = ImageToBytes.ImageToByteArray(qrCodeAsBitmap);
+            return File(file, contactDto.Output);
+        }
+
+        [HttpPost("location")]
+        public IActionResult CreateGeoLocation(GeoLocationDto geoLocationDto)
+        {
+            Geolocation generator = new Geolocation(geoLocationDto.latitude, geoLocationDto.longitude);
+            string payload = generator.ToString();
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            var qrCodeAsBitmap = qrCode.GetGraphic(geoLocationDto.Size);
+
+            var file = ImageToBytes.ImageToByteArray(qrCodeAsBitmap);
+            return File(file, geoLocationDto.Output);
+        }
+
+        [HttpPost("girocode")]
+        public IActionResult CreateGiroCode(GiroCodeDto giroCodeDto)
+        {
+            Girocode generator = new Girocode(giroCodeDto.Iban, giroCodeDto.Bic, giroCodeDto.Name, giroCodeDto.Amount, giroCodeDto.RemittanceInformation, TypeOfRemittance.Structured, giroCodeDto.purposeOfCreditTransfer, giroCodeDto.messageToGirocodeUser, GirocodeVersion.Version1);
+            string payload = generator.ToString();
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            var qrCodeAsBitmap = qrCode.GetGraphic(giroCodeDto.Size);
+
+            var file = ImageToBytes.ImageToByteArray(qrCodeAsBitmap);
+            return File(file, giroCodeDto.Output);
+        }
+        [HttpPost("mail")]
+        public IActionResult CreateEmail(EmailDto emailDto)
+        {
+            Mail generator = new Mail(emailDto.MailReceiver, emailDto.Subject, emailDto.Message);
+            string payload = generator.ToString();
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            var qrCodeAsBitmap = qrCode.GetGraphic(emailDto.Size);
+
+            var file = ImageToBytes.ImageToByteArray(qrCodeAsBitmap);
+            return File(file, emailDto.Output);
+        }
     }
 }
