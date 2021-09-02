@@ -1,0 +1,630 @@
+{
+	"info": {
+		"_postman_id": "0b725080-aa34-4715-bf12-48a624e31520",
+		"name": "QR-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetText",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"text\": \"123\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/text",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"text"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSkype",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"skypeUsername\": \"live:m_mousavi_1\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/skype",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"skype"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetWhatsApp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"number\": \"+98912\",\r\n  \"message\":\"Hi\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/whatsapp",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"whatsapp"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GwtWifi",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ssid\": \"ADSL\",\r\n  \"password\":\"PassWord\",\r\n  \"authenticationMode\":\"WEP\",\r\n  \"isHiddenSSID\":false,\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/wifi",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"wifi"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetURL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"url\": \"https://www.mousavi.dev\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/url",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"url"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPhone",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Number\": \"123456\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/phone",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"phone"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetShadowsocks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"hostname\": \"127.0.0.1\",\r\n  \"port\":\"80\",\r\n  \"password\":\"123456\",\r\n  \"tag\":\"optional\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/shadow",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"shadow"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMMS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"number\":\"+98912\",\r\n  \"text\": \"Sample Text\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/mms",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"mms"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPassword",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"issuer\":\"issue\",\r\n  \"secret\": \"secret\",\r\n  \"lable\": \"lable\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/password",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"password"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMonero",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address\":\"myaddress\",\r\n  \"txAmount\": 20.25,\r\n  \"txPaymentId\":\"1234\",\r\n  \"recipientName\":\"Mousavi\",\r\n  \"txDescription\":\"donation\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/monero",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"monero"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGeLocation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"latitude\": \"51.26118\",\r\n  \"longitude\":\"6.6717\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/location",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"location"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBitCoin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address\": \"123\",\r\n  \"amount\": 1.2,\r\n  \"lable\": \"lable\",\r\n  \"message\": \"message\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/bitcoin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"bitcoin"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBookMark",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"url\":\"https://mousavi.dev\",\r\n  \"title\":\"Personal Weblog\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/bookmark",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"bookmark"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCalendar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"subject\":\"subject\",\r\n  \"description\":\"description\",\r\n  \"location\":\"51.26118,6.6717\",\r\n  \"start\":\"2019-01-06T17:16:40\",\r\n  \"end\":\"2020-01-06T17:16:40\",\r\n  \"allDayEvent\":true,\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/calendar",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"calendar"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetContact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\":\"myname\",\r\n  \"lastname\":\"mylastname\",\r\n  \"nickname\":\"mynickname\",\r\n  \"phone\":\"4455\",\r\n  \"mobilePhone\":\"0912\",\r\n  \"workPhone\":\"0913\",\r\n  \"email\":\"test@gmail.com\",\r\n  \"birthday\":\"2019-01-06T17:16:40\",\r\n  \"website\":\"https://mousavi.dev\",\r\n  \"street\":\"street\",\r\n  \"houseNumber\":\"number\",\r\n  \"city\":\"Berlin\",\r\n  \"zipCode\":\"123\",\r\n  \"country\":\"Germany\",\r\n  \"note\":\"note\",\r\n  \"stateRegion\":\"BR\",\r\n  \"addressOrder\":\"Reversed\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/contact",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"contact"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGiroCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"iban\":\"DE33100205000001194700\",\r\n  \"bic\":\"BFSWDE33BER\",\r\n  \"name\":\"MyBank\",\r\n  \"amount\":123.56,\r\n  \"remittanceInformation\":\"optional\",\r\n  \"purposeOfCreditTransfer\":\"Wiki\",\r\n  \"messageToGirocodeUser\":\"message\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/girocode",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"girocode"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mailReceiver\":\"test@gmail.com\",\r\n  \"subject\":\"Test\",\r\n  \"message\":\"Message\",\r\n  \"Size\":10,\r\n  \"output\":\"png\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/Home/mail",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Home",
+						"mail"
+					],
+					"query": [
+						{
+							"key": "Text",
+							"value": "mostafa",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://localhost:5001/api"
+		}
+	]
+}
