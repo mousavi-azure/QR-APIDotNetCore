@@ -130,5 +130,19 @@ namespace QR_API.Controllers
             var file = ImageToBytes.ImageToByteArray(qrCodeAsBitmap);
             return File(file, emailDto.Output);
         }
+        [HttpPost("mms")]
+        public IActionResult CreateMMS(MMSDto mmsDto)
+        {
+            MMS generator = new MMS(mmsDto.Number, mmsDto.Text);
+            string payload = generator.ToString();
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload, QRCodeGenerator.ECCLevel.Q);
+            QRCode qrCode = new QRCode(qrCodeData);
+            var qrCodeAsBitmap = qrCode.GetGraphic(mmsDto.Size);
+
+            var file = ImageToBytes.ImageToByteArray(qrCodeAsBitmap);
+            return File(file, mmsDto.Output);
+        }
     }
 }
